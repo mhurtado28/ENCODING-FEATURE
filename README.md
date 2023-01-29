@@ -41,6 +41,11 @@ df_onehot = df.copy()
 df_onehot = pd.get_dummies(df_onehot, drop_first=True, columns = encoding_col, prefix = encoding_col)
 ```
 
+------------
+
+##  **English** 🇬🇧
+
+------------
 
 # ENCODING-FEATURE FOR MACHINE LEARNING :computer:
 Here are two ways to perform an Encoding to variables of categorical type. A code block is presented for the Label Encoding method and in the other way for a One Hot Encoding
