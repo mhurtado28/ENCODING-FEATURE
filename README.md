@@ -5,6 +5,7 @@ Aqui se presentan dos manera de realizar un Encoding a variables de tipo categor
 ## LABEL ENCODING
 ```python
 # Se descarga la siguiente librería para ejecutar el Label Encoding
+
 from sklearn.preprocessing import LabelEncoder
 
 # Agrupamos las variables numéricas y categóricas, cada una en dos nuevos Dataframes
@@ -25,15 +26,18 @@ label_df = pd.concat([num_data, cat_data], axis = 1)
 
 ```python
 # Se agrupan las variables que son categóricas y se identifican el número de Targets (Etiquetas) que tiene la variable
+
 encoding_col=[]
 for i in df.select_dtypes(include='object'):   
     print(i,'-->',df[i].nunique())
     encoding_col.append(i)
 
 # Hacemos una copia del dataset cargado para aplicar el metodo One Hot Encoding
+
 df_onehot = df.copy()
 
 # Aplicamos el metodo One Hot Encoding con la librería de Pandas y el comando "pd.get_dummmies"
+
 df_onehot = pd.get_dummies(df_onehot, drop_first=True, columns = encoding_col, prefix = encoding_col)
 ```
 
