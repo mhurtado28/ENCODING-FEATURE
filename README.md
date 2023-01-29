@@ -12,10 +12,12 @@ Aqui se presentan dos manera de realizar un Encoding a variables de tipo categor
 ##H2 lABEL ENCODING
 ##H3 ONE HOT ENCODING
 
+#Heading 1 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+##Heading 2 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+##Heading 3 link [Heading link](https://github.com/pandao/editor.md "Heading link")
 
 
-
-## lABEL ENCODING
+## LABEL ENCODING
 ```python
 #APLICAMOS EL METODO DE LABEL ENCODING A NUESTRO SET DE DATOS 
 from sklearn.preprocessing import LabelEncoder
