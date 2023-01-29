@@ -76,18 +76,18 @@ label_df = pd.concat([num_data, cat_data], axis = 1)
 ## ONE HOT ENCODING
 
 ```python
-# Se agrupan las variables que son categóricas y se identifican el número de Targets (Etiquetas) que tiene la variable
+# The categorical variables are grouped and the number of Targets (Labels) that the variable has are identified
 
 encoding_col=[]
 for i in df.select_dtypes(include='object'):   
     print(i,'-->',df[i].nunique())
     encoding_col.append(i)
 
-# Hacemos una copia del dataset cargado para aplicar el metodo One Hot Encoding
+# We make a copy of the dataset loaded to apply the One Hot Encoding method
 
 df_onehot = df.copy()
 
-# Aplicamos el metodo One Hot Encoding con la librería de Pandas y el comando "pd.get_dummmies"
+# We apply the One Hot Encoding method with the Pandas library and the "pd.get_dummmies" command
 
 df_onehot = pd.get_dummies(df_onehot, drop_first=True, columns = encoding_col, prefix = encoding_col)
 ```
