@@ -2,27 +2,12 @@
 Aqui se presentan dos manera de realizar un Encoding a variables de tipo categoricas. Se presenta un bloque de codigo para el metodo de Label Encoding y otro para un One Hot Encoding
 
 
-**Table of Contents**
-
-[TOCM]
-
-[TOC]
-
-#H1 header
-##H2 lABEL ENCODING
-##H3 ONE HOT ENCODING
-
-#Heading 1 link [Heading link](https://github.com/pandao/editor.md "Heading link")
-##Heading 2 link [Heading link](https://github.com/pandao/editor.md "Heading link")
-##Heading 3 link [Heading link](https://github.com/pandao/editor.md "Heading link")
-
-
 ## LABEL ENCODING
 ```python
-#APLICAMOS EL METODO DE LABEL ENCODING A NUESTRO SET DE DATOS 
+# Se descarga la siguiente librería para ejecutar el Label Encoding
 from sklearn.preprocessing import LabelEncoder
 
- #Agrupamos las variables numéricas y categóricas, cada una en dos nuevos Dataframes
+# Agrupamos las variables numéricas y categóricas, cada una en dos nuevos Dataframes
  
 num_data = df.select_dtypes(include=['int64', 'float64'])
 cat_data = df.select_dtypes(include=['object'])
@@ -32,22 +17,25 @@ cat_data = df.select_dtypes(include=['object'])
 le = LabelEncoder()
 cat_data = cat_data.apply(lambda col: le.fit_transform(col))
 
-#Concatenamos el resultado del label encoding con las variables numéricas existentes
+# Concatenamos el resultado del label encoding con las variables numéricas existentes
 
 label_df = pd.concat([num_data, cat_data], axis = 1)
 ```
 ## ONE HOT ENCODING
 
-**Table of Contents**
+```python
+# Se agrupan las variables que son categóricas y se identifican el número de Targets (Etiquetas) que tiene la variable
+encoding_col=[]
+for i in df.select_dtypes(include='object'):   
+    print(i,'-->',df[i].nunique())
+    encoding_col.append(i)
 
-[TOCM]
+# Hacemos una copia del dataset cargado para aplicar el metodo One Hot Encoding
+df_onehot = df.copy()
 
-[TOC]
-
-#H1 header
-##H2 lABEL ENCODING
-##H3 ONE HOT ENCODING
-
+# Aplicamos el metodo One Hot Encoding con la librería de Pandas y el comando "pd.get_dummmies"
+df_onehot = pd.get_dummies(df_onehot, drop_first=True, columns = encoding_col, prefix = encoding_col)
+```
 
 
 # ENCODING-FEATURE FOR MACHINE LEARNING :computer:
