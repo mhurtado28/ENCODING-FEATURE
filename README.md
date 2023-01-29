@@ -43,7 +43,7 @@ df_onehot = pd.get_dummies(df_onehot, drop_first=True, columns = encoding_col, p
 
 ------------
 
-##  **English** 🇬🇧
+##  **English** 🇬🇧 	:england:
 
 ------------
 
