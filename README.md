@@ -4,8 +4,6 @@ Aqui se presentan dos manera de realizar un Encoding a variables de tipo categor
 
 ## LABEL ENCODING
 
-![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*vAAxgoQJxzYE3NHpPixHIQ.png)
-
 ```python
 # Se descarga la siguiente librería para ejecutar el Label Encoding
 
@@ -26,8 +24,6 @@ cat_data = cat_data.apply(lambda col: le.fit_transform(col))
 label_df = pd.concat([num_data, cat_data], axis = 1)
 ```
 ## ONE HOT ENCODING
-
-![](https://miro.medium.com/v2/resize:fit:720/format:webp/1*QtQRJqewIcwc__C-qkKiHA.png)
 
 ```python
 # Se agrupan las variables que son categóricas y se identifican el número de Targets (Etiquetas) que tiene la variable
