@@ -1,3 +1,6 @@
+![](https://img.shields.io/github/stars/pandao/editor.md.svg) ![](https://img.shields.io/github/forks/pandao/editor.md.svg) ![](https://img.shields.io/github/tag/pandao/editor.md.svg) ![](https://img.shields.io/github/release/pandao/editor.md.svg) ![](https://img.shields.io/github/issues/pandao/editor.md.svg) ![](https://img.shields.io/bower/v/editor.md.svg)
+
+
 # ENCODING-FEATURE PARA MACHINE LEARNING :computer:
 Aqui se presentan dos manera de realizar un Encoding a variables de tipo categoricas. Se presenta un bloque de codigo para el metodo de Label Encoding y otro para un One Hot Encoding
 
